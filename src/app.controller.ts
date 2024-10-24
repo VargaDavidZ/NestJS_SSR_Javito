@@ -11,7 +11,7 @@ export class AppController {
   @Render('index')
   getHello() {
     return {
-      message: this.appService.getHello()
+      message: "Varga Dávid - Szabadság Igénylés"
     };
   }
 
@@ -22,7 +22,6 @@ export class AppController {
     return {
       errors: [],
       data: {}
-      //form data 
     }
   }
 
@@ -31,7 +30,7 @@ export class AppController {
   postFormData(@Body() item: HolidayFormDto, @Res() response: Response) {
 
     let errors = []
-    console.log(item)
+
 
    
     let regex = /^[a-z]{3}-\d{3}$/
@@ -91,7 +90,7 @@ export class AppController {
   @Get("successfulFormInput")
   @Render("successfulFormInput")
   getSuccess(){
-    
+
   }
 
 
