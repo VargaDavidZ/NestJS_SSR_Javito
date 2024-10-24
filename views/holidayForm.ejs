@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<style>
+    .container{
+        width: 50% !important;
+    }
+    label{
+        margin-top: 10px;
+    }
+    .checkBox{
+        margin-top: 15px;
+    }
+</style>
+
+
+
+
+<body>
+
+    <div class="container text-center mt-4 " >
+        <h1>Szabadság-igénylés</h1>
+    </div>
+
+    <div class="container px-5">
+        <form method="post" class="mb-5">
+            <div class="form-group">
+                <label>Név:</label>
+                <input class="form-control" type="text" name="name" id="name" required value="<%= data.name %>" >
+            </div>
+
+
+            <div class="form-group">
+                <label>Kezdő dátum</label>
+            <input class="form-control" type="date" name="beginDate" id="beginDate" required value="<%= data.beginDate %>" >
+           
+            </div>
+
+            <div class="form-group">
+                <label>Vég dátum</label>
+                <input class="form-control" type="date" name="endDate" id="endDate" required value="<%=data.endDate %>" >
+                
+            </div>
+
+            <div class="form-group">
+                <label>Fizetett szabadság</label>
+                <input class="form-check-input checkBox" type="checkbox" name="payedTimeOff" id="payedTimeOff">
+               
+            </div>
+
+            <div class="form-group">
+                <label>Alkalmazott azonosító</label>
+            <input class="form-control" type="text"  name="empId" id="empId" value="<%= data.empId %>">
+           
+            </div>
+
+            <div class="form-group mb-2">
+                <label >Indoklás</label>
+                <textarea class="form-control" name="reason" id="reason"><%=data.reason %></textarea>
+           
+            </div>
+
+            <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Küldés">
+    
+        </form>
+
+
+        
+    <% for(var i=0; i<errors.length; i++) {%>
+        <div class="alert alert-primary">
+            <p><%= errors[i] %></p>
+        </div>
+     <% } %>
+
+
+
+
+    </div>
+    
+    
+
+
+
+
+</body>
+</html>
